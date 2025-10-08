@@ -17,8 +17,8 @@ public class Entry()
     public void Display()
     {
         Console.WriteLine($"Date: {_date}");
-        Console.WriteLine($"Prompt: {_prompt}");
         Console.WriteLine($"Mood: {_mood}");
+        Console.WriteLine($"Prompt: {_prompt}");
         Console.WriteLine($"Entry: {_entry}\n");
     }
 }
