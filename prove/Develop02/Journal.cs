@@ -1,6 +1,4 @@
 using System.Globalization;
-using System.Runtime.CompilerServices;
-using System.Security.Cryptography;
 using CsvHelper;
 
 public class Journal()
