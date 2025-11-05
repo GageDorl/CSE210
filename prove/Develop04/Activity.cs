@@ -1,8 +1,8 @@
 class Activity
 {
-    string _name;
-    int _duration;
-    string _description;
+    private string _name;
+    private int _duration;
+    private string _description;
 
     public Activity(string name, string description)
     {

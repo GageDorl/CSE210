@@ -1,13 +1,13 @@
 class ReflectingActivity : Activity
 {
-    List<string> _prompts =
+    private List<string> _prompts =
     [
         "Think of a time when you stood up for someone else.",
         "Think of a time when you did something really difficult.",
         "Think of a time when you helped someone in need.",
         "Think of a time when you did something truly selfless."
     ];
-    List<string> _questions =
+    private List<string> _questions =
     [
         "Why was this experience meaningful to you?",
         "Have you ever done anything like this before?",
@@ -19,7 +19,7 @@ class ReflectingActivity : Activity
         "What did you learn about yourself through this experience?",
         "How can you keep this experience in mind in the future?"
     ];
-    int _pauseDuration;
+    private int _pauseDuration;
 
     public ReflectingActivity(string name, string description) : base(name, description)
     {

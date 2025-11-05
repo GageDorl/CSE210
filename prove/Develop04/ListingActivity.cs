@@ -1,13 +1,13 @@
 class ListingActivity : Activity
 {
-    List<string> _prompts = [
+    private List<string> _prompts = [
         "Who are people that you appreciate?",
         "What are personal strengths of yours?",
         "Who are people that you have helped this week?",
         "When have you felt the Holy Ghost this month?",
         "Who are some of your personal heroes?"
     ];
-    List<string> _listedItems = [];
+    private List<string> _listedItems = [];
 
     public ListingActivity(string name, string description) : base(name, description)
     {

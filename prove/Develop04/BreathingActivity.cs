@@ -1,8 +1,8 @@
 class BreathingActivity : Activity
 {
-    int _inDuration;
-    int _holdDuration;
-    int _outDuration;
+    private int _inDuration;
+    private int _holdDuration;
+    private int _outDuration;
 
     public BreathingActivity(string name, string description) : base(name, description)
     {
