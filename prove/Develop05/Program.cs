@@ -4,13 +4,15 @@ class Program
 {
     static List<SimpleGoal> _goals = [];
     static int _points = 0;
+    static int _level = 1;
     static void Main(string[] args)
     {
         Menu();
     }
     static void Menu()
     {
-        Console.WriteLine($"You have {_points} points.\n");
+        Console.WriteLine($"You have {_points} points.");
+        Console.WriteLine($"You are Level {_level}!\n");
         Console.Write("Menu Options:\n  1. Create New Goal\n  2. List Goals\n  3. Save Goals\n  4. Load Goals\n  5. Record Event\n  6. Quit\nSelect a choice from the menu: ");
         int choice = int.Parse(Console.ReadLine());
         switch (choice)
@@ -89,6 +91,7 @@ class Program
         using (StreamWriter outputFile = new(filename))
         {
             outputFile.WriteLine(_points);
+            outputFile.WriteLine(_level);
             foreach(SimpleGoal goal in _goals)
             {
                 outputFile.WriteLine(goal.getStringRepresentation());
@@ -102,7 +105,8 @@ class Program
         string filename = Console.ReadLine();
         string[] lines = System.IO.File.ReadAllLines(filename);
         _points = int.Parse(lines[0]);
-        lines = lines.Skip(1).ToArray();
+        _level = int.Parse(lines[1]);
+        lines = lines.Skip(2).ToArray();
         foreach(string line in lines)
         {
             string[] parts = line.Split("|");
@@ -135,5 +139,11 @@ class Program
         int reward = _goals[goalNum].Complete();
         Console.WriteLine($"Congratulations! You have earned {reward} points!");
         _points += reward;
+        if (_points >= 100)
+        {
+            _level+=1;
+            _points-=100;
+            Console.WriteLine($"You Leveled Up! You are now Level {_level}!");
+        }
     }
 }
